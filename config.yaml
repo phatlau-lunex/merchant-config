@@ -1,0 +1,29 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 9031
+  adminConnectors:
+    - type: http
+      port: 9032
+logging:
+  level: DEBUG
+  appenders:
+    - type: file
+      currentLogFilename: /tmp/merchantgw.txt
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: /tmp/merchantgw-%d.txt
+      archivedFileCount: 5
+app:
+  dbName: merchantgw
+  dbHost: 10.9.9.61
+  dbUsername: lunexuser
+  dbPassword: n0bug4ver
+  cacheConfig: localhost:6379
+  statsdHost: 192.168.93.69
+  statsdAppPrefix: test.merchantgw.lu61.uri.
+  appConfigVerifyingTime: 3
+  swaggerHost: http://192.168.93.61:9003
+  paypalClientId: ARPomBDeSrHT-z5ecAAe-BgMf8idje9gm41-KuXo8JjjsaoihJn9HtEtXN_v
+  paypalClientSecrect: EHE3CBCcRwKG3svt209gvfOobzKmht4YqRBXyB_BIhn4JdpGQcAvlhEgk8yD
+  paypalMode: sandbox
